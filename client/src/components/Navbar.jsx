@@ -17,9 +17,9 @@ import { useAuthStore } from '../store/useAuthStore'
 const pages = ['Products', 'Pricing', 'Contact']
 const settings = ['Profile', 'Account', 'Dashboard']
 
-function Navbar() {
-  const navigate = useNavigate();
-  const { verifySuccess, setVerifySuccess, performLogout } = useAuthStore();
+function Navbar () {
+  const navigate = useNavigate()
+  const { verifySuccess, setVerifySuccess, performLogout } = useAuthStore()
 
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
@@ -47,7 +47,7 @@ function Navbar() {
         boxShadow: 'none',
         color: 'black',
         py: 0,
-        zIndex: 2,
+        zIndex: 2
       }}
     >
       <Container maxWidth='xl'>
@@ -152,10 +152,14 @@ function Navbar() {
           <Box sx={{ flexGrow: 0 }}>
             {!verifySuccess ? (
               <Button
-                type="submit"
+                type='submit'
                 fullWidth
-                variant="contained"
-                sx={{ borderRadius: 50 }}
+                variant='contained'
+                sx={{
+                  backgroundColor: '#000000',
+                  color: '#ffffff',
+                  ':hover': { backgroundColor: '#9198e5' }
+                }}
                 onClick={() => navigate('/auth')}
               >
                 Login

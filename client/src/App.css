@@ -72,18 +72,6 @@ html {
   transform: translateY(-7px) scale(1.05, 1.05);
 }
 
-/* Optional styles (decoration) */
-
-/* body {
-  padding: 2em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 300px; /* Change this to any px value */
-  /* margin: 0 auto; */
-  /* min-height: calc(100vh - 100px); */
-/* } */ 
-
 .pebble-bl {
   position: fixed;
   bottom: -100px;

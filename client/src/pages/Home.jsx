@@ -77,16 +77,16 @@ export default function Home () {
             </defs>
             {/* <!-- Background image --> */}
             <g clipPath='url(#maskImage)' transform='translate(0 -7)'>
-              <div className='right-hero-img' x='70' y='38' transform='translate(-90 -31)' />
-              {/* <image
+              {/* <div className='right-hero-img' x='70' y='38' transform='translate(-90 -31)' /> */}
+              <image
                 clipPath='url(#maskBackground)'
                 width='120'
                 height='120'
                 x='70'
                 y='38'
-                href='https://res.cloudinary.com/dazdt97d3/image/upload/v1615813805/background.png'
+                href='/back.png'
                 
-              /> */}
+              />
               {/* <!-- Foreground image --> */}
               <image
                 width='120'

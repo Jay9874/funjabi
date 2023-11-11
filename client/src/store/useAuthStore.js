@@ -13,7 +13,7 @@ export const useAuthStore = create((set) => ({
     registerLoading: false,
     setRegisterLoading: (registerLoading) => set({ registerLoading: registerLoading }),
 
-    performSignUp: async (email, password) => {
+    performSignUp: async (email, password, navigate) => {
         try {
             useAuthStore.getState().setRegisterLoading(true);
             const CustomHeader = new Headers();
@@ -29,6 +29,7 @@ export const useAuthStore = create((set) => ({
                     if (result.success === true) {
                         toast.success(result.msg);
                         useAuthStore.getState().setAuthType("sign-in");
+                        navigate('/')
                     }
 
                     if (result.success === false) toast.error(result.msg);
