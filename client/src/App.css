@@ -1,4 +1,4 @@
-#root {
+#root, .main-container {
   min-height: 100vh;
   min-width: 100vw;
 }
@@ -96,6 +96,12 @@ html {
   background: radial-gradient(closest-side, #986ff1, rgb(231, 120, 120));
 }
 
+.auth-container{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @media screen and (max-width: 900px) {
   .hero-section {
     display: flex;

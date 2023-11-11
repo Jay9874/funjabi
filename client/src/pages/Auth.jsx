@@ -18,13 +18,13 @@ export default function Auth () {
   const { authType } = useAuthStore()
 
   return (
-    <>
+    <div className='auth-container'>
       {authType === 'sign-in' ? (
         <SignIn />
       ) : (
         authType === 'sign-up' && <SignUp />
       )}
-    </>
+    </div>
   )
 }
 
@@ -42,79 +42,74 @@ function SignIn () {
   }
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Container component='main' maxWidth='xs'>
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 20,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center'
-          }}
-        >
-          <Avatar
-            onClick={() => navigate('/')}
-            alt='company_logo'
-            src='/logo.png'
-            sx={{ mr: 1, cursor: 'pointer' }}
-          />
-          <Typography component='h1' variant='h5'>
-            Sign in
-          </Typography>
-          <Box
-            component='form'
-            noValidate
-            onSubmit={handleSubmit}
-            sx={{ mt: 3 }}
+    // <ThemeProvider theme={defaultTheme}>
+    <Container component='main' maxWidth='xs'>
+      {/* <CssBaseline /> */}
+      <Box
+        sx={{
+          // marginTop: 20,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center'
+        }}
+      >
+        <Avatar
+          onClick={() => navigate('/')}
+          alt='company_logo'
+          src='/logo.png'
+          sx={{ mr: 1, cursor: 'pointer' }}
+        />
+        <Typography component='h1' variant='h5'>
+          Sign in
+        </Typography>
+        <Box component='form' noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                id='email'
+                label='Email Address'
+                name='email'
+                autoComplete='email'
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                name='password'
+                label='Password'
+                type='password'
+                id='password'
+                autoComplete='new-password'
+              />
+            </Grid>
+          </Grid>
+          <Button
+            type='submit'
+            fullWidth
+            variant='contained'
+            sx={{ mt: 3, mb: 2 }}
           >
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id='email'
-                  label='Email Address'
-                  name='email'
-                  autoComplete='email'
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name='password'
-                  label='Password'
-                  type='password'
-                  id='password'
-                  autoComplete='new-password'
-                />
-              </Grid>
+            {verifyLoading ? 'Verifying' : 'Sign In'}
+          </Button>
+          <Grid container>
+            <Grid item>
+              <Link
+                href='#'
+                onClick={() => setAuthType('sign-up')}
+                variant='body2'
+              >
+                {"Don't have an account? Sign Up"}
+              </Link>
             </Grid>
-            <Button
-              type='submit'
-              fullWidth
-              variant='contained'
-              sx={{ mt: 3, mb: 2 }}
-            >
-              {verifyLoading ? 'Verifying' : 'Sign In'}
-            </Button>
-            <Grid container>
-              <Grid item>
-                <Link
-                  href='#'
-                  onClick={() => setAuthType('sign-up')}
-                  variant='body2'
-                >
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
-          </Box>
+          </Grid>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
-      </Container>
-    </ThemeProvider>
+      </Box>
+      <Copyright sx={{ mt: 5 }} />
+    </Container>
+    // </ThemeProvider>
   )
 }
 
@@ -134,7 +129,7 @@ function SignUp () {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component='main' maxWidth='xs'>
-        <CssBaseline />
+        {/* <CssBaseline /> */}
         <Box
           sx={{
             marginTop: 20,
