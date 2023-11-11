@@ -102,5 +102,11 @@ export const useAuthStore = create((set) => ({
             useAuthStore.getState().setVerifyLoading(false);
             useAuthStore.getState().setVerifySuccess(false);
         }
+    },
+    performLogout: () => {
+        useAuthStore.getState().setVerifySuccess(false);
+        useAuthStore.getState().setUser(null);
+        localStorage.removeItem("login_token");
+        toast.success('Logout success!');
     }
 }));

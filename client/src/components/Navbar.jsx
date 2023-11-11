@@ -19,7 +19,7 @@ const settings = ['Profile', 'Account', 'Dashboard']
 
 function Navbar() {
   const navigate = useNavigate();
-  const { verifyLoading, verifySuccess, setVerifySuccess, user, setUser } = useAuthStore();
+  const { verifySuccess, setVerifySuccess, performLogout } = useAuthStore();
 
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
@@ -39,12 +39,6 @@ function Navbar() {
     setAnchorElUser(null)
   }
 
-  const handleLogout = () => {
-    setVerifySuccess(false)
-    setUser(null)
-    localStorage.removeItem("login_token")
-  }
-
   return (
     <AppBar
       position='static'
@@ -53,7 +47,7 @@ function Navbar() {
         boxShadow: 'none',
         color: 'black',
         py: 0,
-        zIndex: 2
+        zIndex: 2,
       }}
     >
       <Container maxWidth='xl'>
@@ -194,7 +188,7 @@ function Navbar() {
                       <Typography textAlign='center'>{setting}</Typography>
                     </MenuItem>
                   ))}
-                  <MenuItem key={4} onClick={handleLogout}>
+                  <MenuItem key={4} onClick={performLogout}>
                     <Typography textAlign='center'>Logout</Typography>
                   </MenuItem>
                 </Menu>
