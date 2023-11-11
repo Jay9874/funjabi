@@ -4,8 +4,9 @@
   "description": "A hero section with authentication.",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js",
-    "client": "cd client && npm run dev"
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "client": "cd client && npm i && npm run dev"
   },
   "author": "Jay Prakash Sharma",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.0.0",
     "nodemon": "^3.0.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "sooner": "^1.1.4"
   }
 }
