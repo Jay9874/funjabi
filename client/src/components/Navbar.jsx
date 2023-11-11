@@ -42,7 +42,7 @@ function Navbar () {
         boxShadow: 'none',
         color: 'black',
         py: 0,
-        zIndex: 2
+        zIndex: 2,
       }}
     >
       <Container maxWidth='xl'>
